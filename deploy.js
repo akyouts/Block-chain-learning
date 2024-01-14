@@ -13,6 +13,7 @@ const main = async ()=>{
     console.log('Deploying , please wait...');
     const contract  = await contractFactory.deploy();
     const deployReceipt = await contract.deploymentTransaction().wait(1);
+    console.log(`Contract Address: ${await contract.getAddress()}`);
     
     const currentFavouriteNumber = await contract.retrive();
 
